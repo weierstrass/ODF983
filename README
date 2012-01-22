@@ -1,4 +1,4 @@
 
-#List of routines
+LIST OF ROUTINES:
 
-*ssor.c - Successive over-relaxation (SOR) 
+- ssor.c - Successive over-relaxation (SOR) 
