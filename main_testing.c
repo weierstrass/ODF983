@@ -31,7 +31,7 @@ int main(){
 		x[i] = 0;
 	}
 
-	ssor(A, b, x, n, 1.99);
+	ssor(A, b, x, n, 1.99, 1e-3);
 
 	printf("%lf", x[0]);
 
