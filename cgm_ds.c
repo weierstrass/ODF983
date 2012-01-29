@@ -11,7 +11,7 @@
 #include "common.h"
 #include "cblas.h"
 
-void scgm(double* A, double* b, double* x, int n, double tol){
+void cgm_ds(double* A, double* b, double* x, int n, double tol){
   int k;
   double alpha, beta, *r, r_old_dot, *p, *tmp;
   r = (double*) malloc(n * sizeof(double));
