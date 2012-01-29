@@ -15,6 +15,8 @@ void sor_ds(double* A, double* b, double* x, int n, double w, double tol){
   int i;
   double err, x_old, *wa;
   wa = (double*) malloc(n * sizeof(double));
+
+  //precalculate quantity w / A(i , i)
   for(i = 0; i < n; i++) wa[i] = w / *(A + i + n * i);
 
   while(1){
@@ -22,11 +24,14 @@ void sor_ds(double* A, double* b, double* x, int n, double w, double tol){
 
     for(i = 0; i < n; i++){
       x_old = x[i];
+
+      //x_i_k += (b_i - dot(A_row=i, x_k) * w / A(i, i) 
       x[i] = x[i] + (b[i] - cblas_ddot(n, (A + n * i), 1, x, 1)) * wa[i];
       
       x_old = fabs(x_old - x[i]); 
       err +=  x_old * x_old;
     }
+
     //convergence check
     if(sqrt(err) < tol) break;
   }
@@ -34,4 +39,3 @@ void sor_ds(double* A, double* b, double* x, int n, double w, double tol){
   free(wa);
 
 }
-
