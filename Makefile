@@ -1,4 +1,8 @@
 # Makefile for ODF983
+# Andreas Bülling, 2011
+
+#Settings
+CBLAS_HEADERS_PATH = /usr/include/goto/
 
 # Objects
 OBJS :=  cgm_ds.o\
@@ -10,7 +14,7 @@ OBJS :=  cgm_ds.o\
 CC = gcc
 
 # Compiler options
-CFLAGS = -O2 -I/usr/include/goto/
+CFLAGS = -O2 -I$(CBLAS_HEADERS_PATH)
 
 # Libraries
 LIBS = -lm -lgoto2
