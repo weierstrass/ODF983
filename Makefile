@@ -8,7 +8,7 @@ CBLAS_HEADERS_PATH = /usr/include/goto/
 OBJS :=  cgm_ds.o\
 	 sor_ds.o\
 	 main_testing.o\
-	aux.c
+	 aux/timing.c
 
 # C-compiler
 CC = gcc

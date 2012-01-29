@@ -5,22 +5,17 @@
 #include <stdlib.h>
 
 #include "odf983.h"
+#include "aux/aux.h"
 
 #define SIZE 1000
 
 int main(){
-  double *A;
+  double *A, t;
   double *x, *b;
   int n = SIZE, i, j;
 
-  //allocate mem
-  /* A = (double**) malloc(n * sizeof(double*)); */
-/*   for(i = 0; i < n; i++){ */
-/*     A[i] = (double*) malloc(n * sizeof(double)); */
-  //}
   x = (double*) malloc(n * sizeof(double));
   b = (double*) malloc(n * sizeof(double));
-
   A = (double*) malloc(n * n * sizeof(double));
 
   //set dummy vals...
@@ -35,9 +30,12 @@ int main(){
     x[i] = 0;
   }
 
-  //ssor(A, b, x, n, 1.99, 1e-3);
+  t = timing();
+  sor_ds(A, b, x, n, 1.99, 1e-3);
+  printf("%.10f, %.10f, t = %f\n", x[0], x[n-1], timing() - t);
+  t = timing();
   cgm_ds(A, b, x, n, 1e-3);
-  printf("%.10f, %.10f\n", x[0], x[n-1]);
+  printf("%.10f, %.10f, t = %f\n", x[0], x[n-1], timing() - t);
 
   return 0;
 }
