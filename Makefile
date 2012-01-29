@@ -1,16 +1,19 @@
 # Makefile for ODF983
 
 # Objects
-OBJS := main_testing.o ssor.o
+OBJS :=  cgm_ds.o\
+	 sor_ds.o\
+	 main_testing.o\
+	aux.c
 
 # C-compiler
 CC = gcc
 
 # Compiler options
-CFLAGS =   -O2 -Wl,-rpath `pwd`
+CFLAGS = -O2 -I/usr/include/goto/
 
 # Libraries
-LIBS = -L. -lm -lgoto2
+LIBS = -lm -lgoto2
 
 a.out: $(OBJS)
 	$(CC) -o $@ $(CFLAGS) $(OBJS) $(LIBS)

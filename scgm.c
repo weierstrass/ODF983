@@ -1,5 +1,5 @@
 /*
- * scgm.c
+ * cgm_ds.c
  * Andreas Bülling, 2012
  * Implementation of the conjugate gradient method
  *
@@ -8,10 +8,8 @@
 #include <stdio.h>
 #include <math.h>
 
-#include "Gotoblas2/common.h"
+#include "common.h"
 #include "cblas.h"
-
-#include "odf983.h"
 
 void scgm(double* A, double* b, double* x, int n, double tol){
   int k;

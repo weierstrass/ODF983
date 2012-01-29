@@ -1,5 +1,5 @@
 
 LIST OF ROUTINES:
 
-- ssor.c - Successive over-relaxation (SOR) 
-- scgm,c - Conjugate gradient method (simple)
+- sor_ds(...) - Successive over-relaxation (SOR) 
+- cgm_ds(...) - Conjugate gradient method 

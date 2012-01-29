@@ -1,7 +1,7 @@
 /*
- * ssor.c
+ * sor_ds.c
  * Andreas Bülling, 2012
- * Gauss-Seidel using over-relaxation for faster convergence
+ * Gauss-Seidel using over-relaxation for faster convergence.
  */
 
 #include <stdio.h>
